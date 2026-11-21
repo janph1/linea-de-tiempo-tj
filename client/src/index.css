@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background: radial-gradient(circle at 50% 0%, #332418 0%, #1d150f 55%, #130d09 100%);
+    color: #f8f2e4;
+  }
+}
+
+/* Textura sutil de pergamino para cartas */
+.parchment-surface {
+  background-color: #f8f2e4;
+  background-image:
+    radial-gradient(ellipse at 20% 15%, rgba(255, 253, 246, 0.8) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 90%, rgba(214, 190, 145, 0.35) 0%, transparent 60%),
+    linear-gradient(180deg, #faf5ea 0%, #f8f2e4 55%, #f1e6cf 100%);
+}
+
+/* Textura sutil de tablero de mesa clásica */
+.table-felt {
+  background-image:
+    radial-gradient(ellipse at 50% 45%, rgba(139, 107, 35, 0.14) 0%, transparent 65%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(248, 242, 228, 0.012) 0px,
+      rgba(248, 242, 228, 0.012) 2px,
+      transparent 2px,
+      transparent 8px
+    );
+}
+
+/* Utilidades 3D para animación de volteo de cartas */
+.perspective-1000 {
+  perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Scrollbar elegante */
+.timeline-scroll::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.timeline-scroll::-webkit-scrollbar-track {
+  background: rgba(29, 21, 15, 0.6);
+  border-radius: 9999px;
+}
+
+.timeline-scroll::-webkit-scrollbar-thumb {
+  background: rgba(139, 107, 35, 0.55);
+  border-radius: 9999px;
+}
+
+.timeline-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(200, 164, 77, 0.8);
+}
